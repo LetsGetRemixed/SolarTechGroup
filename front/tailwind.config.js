@@ -25,7 +25,7 @@
 					DEFAULT: '#39ff14', // Neon Green: Energetic accents and details.
 				  },
 				  dark: {
-					DEFAULT: '#2e2e2e', // Dark Charcoal: Contrast, text, footers, headers.
+					DEFAULT: '#212529', // Dark Charcoal: Contrast, text, footers, headers.
 				  },
 				  amber: {
 					DEFAULT: '#ffbf00', // Amber Yellow: Attention banners or highlights.
