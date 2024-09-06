@@ -6,6 +6,11 @@
 	  theme: {
 	    extend: {
 
+			fontFamily: {
+				sans: ['Roboto', 'sans-serif'],
+				montserrat: ['Montserrat', 'sans-serif'],
+			  },
+
 			colors: {
 				primary: {
 					DEFAULT: '#007bff', // Electric Blue: Represents energy and innovation.
