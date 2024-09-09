@@ -13,7 +13,7 @@
 
 			colors: {
 				primary: {
-					DEFAULT: '#007bff', // Electric Blue: Represents energy and innovation.
+					DEFAULT: '#e35f21', // Electric Blue: Represents energy and innovation.
 				  },
 				  mainwhite: {
 					DEFAULT: '#f5f5f5', // Bright White: Clean background and text areas.

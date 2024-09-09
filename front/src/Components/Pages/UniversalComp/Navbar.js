@@ -23,9 +23,17 @@ const Navbar = () => {
 
     return (
         <nav className="bg-[#212529] py-4 md:py-6">
-            <div className="container mx-auto flex items-center px-12 justify-between">
+            <div className="container mx-auto flex items-center px-6 justify-between">
                 {/* Logo */}
-                <Link className="text-3xl font-bold text-white" to="/">STG</Link>
+             <Link to="/" className="flex items-center">
+                 <img 
+                     src="/STGLogo.png" 
+                     alt="Southern Technologist Group" 
+                      className="w-10 h-10 md:w-10 md:h-10" 
+                 />
+                     {/* Hide the name on smaller screens, show it on medium screens and up */}
+                     <span className="text-2xl font-bold text-white ml-4 hidden md:block">Southern Technologist Group</span>
+            </Link>
 
                 {/* Desktop Links */}
                 <div className="hidden md:flex md:items-center space-x-6">
@@ -39,9 +47,9 @@ const Navbar = () => {
                     onClick={handleMenuToggle}
                     ref={navToggleRef}
                 >
-                    <span className={`block w-full h-1 bg-red-500  mb-1 transition-all duration-300 ${menuOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
-                    <span className={`block w-full h-1 bg-primary mb-1 transition-all duration-300 ${menuOpen ? 'opacity-0' : ''}`}></span>
-                    <span className={`block w-full h-1 bg-maingreen transition-all duration-300 ${menuOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
+                    <span className={`block w-full h-1 bg-white  mb-1 transition-all duration-300 ${menuOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
+                    <span className={`block w-full h-1 bg-white mb-1 transition-all duration-300 ${menuOpen ? 'opacity-0' : ''}`}></span>
+                    <span className={`block w-full h-1 bg-white transition-all duration-300 ${menuOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
                 </button>
             </div>
 

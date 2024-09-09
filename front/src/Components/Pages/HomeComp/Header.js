@@ -23,8 +23,8 @@ const Header = () => {
     >
       <div className="flex items-center justify-center h-full bg-black bg-opacity-50 px-4">
         <h1 className="flex flex-col md:flex-row items-center text-center">
-          <span className="text-primary font-montserrat text-3xl md:text-5xl font-bold">Solar</span>
-          <span className="text-mainwhite font-montserrat text-3xl md:text-5xl font-bold mt-2 md:mt-0 md:ml-2">Tech LED</span>
+          <span className="text-primary font-montserrat text-3xl md:text-5xl font-bold">Southern</span>
+          <span className="text-mainwhite font-montserrat text-3xl md:text-5xl font-bold mt-2 md:mt-0 md:ml-2">Technologist Group</span>
         </h1>
       </div>
     </header>
