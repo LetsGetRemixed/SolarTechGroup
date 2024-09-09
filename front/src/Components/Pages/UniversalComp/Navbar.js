@@ -22,7 +22,7 @@ const Navbar = () => {
     }, [menuOpen]);
 
     return (
-        <nav className="bg-[#212529] py-4 md:py-6">
+        <nav className="bg-dark py-4 md:py-6">
             <div className="container mx-auto flex items-center px-6 justify-between">
                 {/* Logo */}
              <Link to="/" className="flex items-center">
@@ -37,8 +37,8 @@ const Navbar = () => {
 
                 {/* Desktop Links */}
                 <div className="hidden md:flex md:items-center space-x-6">
-                    <Link className="text-white hover:text-cyan transition duration-300" to="/products">Products</Link>
-                    <Link className="text-white hover:text-cyan transition duration-300" to="/contact">Contact</Link>
+                    <Link className="text-white hover:text-highlight transition duration-300" to="/products">Products</Link>
+                    <Link className="text-white hover:text-highlight transition duration-300" to="/contact">Contact</Link>
                 </div>
 
                 {/* Mobile Menu Button */}
@@ -61,8 +61,8 @@ const Navbar = () => {
                 ref={navMenuRef}
             >
                 <ul className="flex flex-col items-center space-y-4">
-                    <li><Link className="text-white hover:text-cyan transition duration-300" to="/products">Products</Link></li>
-                    <li><Link className="text-white hover:text-cyan transition duration-300" to="/contact">Contact</Link></li>
+                    <li><Link className="text-white hover:text-highlight transition duration-300" to="/products">Products</Link></li>
+                    <li><Link className="text-white hover:text-highlight transition duration-300" to="/contact">Contact</Link></li>
                 </ul>
             </div>
         </nav>

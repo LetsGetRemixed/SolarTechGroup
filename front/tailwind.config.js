@@ -18,8 +18,8 @@
 				  mainwhite: {
 					DEFAULT: '#f5f5f5', // Bright White: Clean background and text areas.
 				  },
-				  cyan: {
-					DEFAULT: '#00e5ff', // Vivid Cyan: Accent or hover effect.
+				  highlight: {
+					DEFAULT: '#f39539', // Vivid Cyan: Accent or hover effect.
 				  },
 				  maingreen: {
 					DEFAULT: '#39ff14', // Neon Green: Energetic accents and details.
