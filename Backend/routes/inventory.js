@@ -1,15 +1,27 @@
 const express = require('express');
 const router = express.Router();
-const { getDB } = require('../db');
+const Inventory = require('../models/inventory');
 
 // Get all inventory
 router.get('/', async (req, res) => {
-    const db = await getDB();
     try {
-        const items = await db.collection('TestCollection2').find().toArray();
-        res.json(items);
+        const items = await Inventory.find();
+        res.status(200).json(items);
     } catch(error) {
-        res.status(500).send('Error fecthing inventory');
+        res.status(500).send('Error fetching inventory: ' + error.message);
+    }
+});
+
+
+// Add a new Item
+router.post('/add', async (req, res) => {
+    const { itemName, quantity, price, description } = req.body;
+    try {
+        const newItem = new Inventory({ itemName, quantity, price, description });
+        await newItem.save();
+        res.status(201).send('Item added successfully');
+    } catch (error) {
+        res.status(400).send('Error adding Item: ' + error.message);
     }
 });
 
