@@ -5,7 +5,7 @@ const uri = process.env.MONGODB_URI;
 let db;
 
 async function connectToDB() {
-    const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+    const client = new MongoClient(uri);
     try {
         await client.connect();
         db = client.db('TestDatabase1');
@@ -15,4 +15,12 @@ async function connectToDB() {
     }
 }
 
-connectToDB();
+function getDB() {
+    if (!db) {
+        throw Error('Database not initilized');
+    }
+    return db;
+
+}
+
+module.exports = { connectToDB, getDB };
