@@ -39,6 +39,7 @@ const Navbar = () => {
                 <div className="hidden md:flex md:items-center space-x-6">
                     <Link className="text-white hover:text-highlight transition duration-300" to="/products">Products</Link>
                     <Link className="text-white hover:text-highlight transition duration-300" to="/contact">Contact</Link>
+                    <Link className="text-white hover:text-highlight transition duration-300" to="/about">About Us</Link>
                 </div>
 
                 {/* Mobile Menu Button */}
@@ -63,6 +64,7 @@ const Navbar = () => {
                 <ul className="flex flex-col items-center space-y-4">
                     <li><Link className="text-white hover:text-highlight transition duration-300" to="/products">Products</Link></li>
                     <li><Link className="text-white hover:text-highlight transition duration-300" to="/contact">Contact</Link></li>
+                    <li><Link className="text-white hover:text-highlight transition duration-300" to="/about">About Us</Link></li>
                 </ul>
             </div>
         </nav>
