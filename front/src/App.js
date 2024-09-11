@@ -6,6 +6,7 @@ import Contact from './Components/Pages/ContactComp/Contact';
 import ScrollToTop from './Components/Pages/UniversalComp/ScrollToTop';
 import Privacy from './Components/Pages/PrivacyComp/Privacy';
 import ProductList from './Components/Pages/ProductComp/ProductList';
+import AdminPage from './Components/Pages/AdminComp/AdminPage';
 function App() {
   return (
     <Router>
@@ -16,6 +17,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/products" element={<ProductList />} />
+        <Route path="/admin" element={<AdminPage />} />
         
       </Routes>
     </Router>
