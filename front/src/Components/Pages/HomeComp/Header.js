@@ -56,8 +56,7 @@ const Header = () => {
           {typedText === fullText && (
             <div className="mt-6 flex flex-col items-center animate-fade-in">
               <span className="text-xl md:text-2xl font-semibold text-white text-center">Moving Forward</span>
-              {/* Centered Logo Image */}
-              
+
             </div>
           )}
         </div>
