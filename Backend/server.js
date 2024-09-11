@@ -3,6 +3,7 @@ const cors = require('cors');
 const connectToDB = require('./db');
 const userRoutes = require('./routes/users');
 const inventoryRoutes = require('./routes/inventory');
+const purchaseRoutes = require('./routes/purchases');
 
 const app = express();
 
@@ -12,6 +13,7 @@ app.use(express.json()); // Parse JSON bodies for incoming request
 // Routes
 app.use('/users', userRoutes);
 app.use('/inventory', inventoryRoutes);
+app.use('/purchases', purchaseRoutes);
 
 // Connect to MongoDB
 connectToDB();
