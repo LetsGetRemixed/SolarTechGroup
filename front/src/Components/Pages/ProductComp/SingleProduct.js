@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import useProducts from './useProducts'; // Import your hook to fetch products
+import Navbar from '../UniversalComp/Navbar';
+import Footer from '../UniversalComp/Footer';
+import HeaderRoute from '../UniversalComp/HeaderRoute';
 
 const SingleProduct = () => {
     const { productId } = useParams(); // Get the product ID from the URL
@@ -30,6 +33,9 @@ const SingleProduct = () => {
     if (!product) return <p>No product found.</p>;
 
     return (
+        <div>
+            <Navbar />
+            <HeaderRoute imageUrl="/images/headerbanner.png" title="About Us" productName={product.itemName} />
         <div className="container mx-auto px-4 py-8">
             <h1 className="text-3xl font-bold mb-4">{product.itemName}</h1>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -50,6 +56,8 @@ const SingleProduct = () => {
                     <p className="text-md text-gray-600">Available Stock: {product.stock}</p>
                 </div>
             </div>
+        </div>
+        <Footer />
         </div>
     );
 };

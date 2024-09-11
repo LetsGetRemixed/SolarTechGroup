@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
-const HeaderRoute = ({ imageUrl, title }) => {
+const HeaderRoute = ({ imageUrl, title, productName }) => {
     const location = useLocation();
 
     // Split the current path into an array of strings to create the breadcrumb links
@@ -21,11 +21,15 @@ const HeaderRoute = ({ imageUrl, title }) => {
                             {breadcrumbs.length > 0 && breadcrumbs.map((crumb, index) => {
                                 const pathTo = `/${breadcrumbs.slice(0, index + 1).join('/')}`;
 
+                                // Check if the current crumb is the product ID, and replace with productName if available
+                                const isLastCrumb = index === breadcrumbs.length - 1;
+                                const displayText = isLastCrumb && productName ? productName : crumb.replace('-', ' ');
+
                                 return (
                                     <span key={index}>
                                         {' / '}
                                         <Link to={pathTo} className="text-highlight hover:underline capitalize">
-                                            {crumb.replace('-', ' ')} {/* Converts dashes in URL to spaces */}
+                                            {displayText} {/* Show product name instead of ID */}
                                         </Link>
                                     </span>
                                 );
