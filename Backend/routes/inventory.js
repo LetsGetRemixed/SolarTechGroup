@@ -12,6 +12,19 @@ router.get('/', async (req, res) => {
     }
 });
 
+// Get a single Item
+router.get('/:id', async (req, res) => {
+    try {
+        const item = await Inventory.findById(req.params.id);
+        if (!item) {
+            return res.status(404).json({ message: 'Product not found' });
+        }
+        res.status(200).json(item);
+    } catch (error) {
+        res.status(500).send('Error fetching product: ' + error.message);
+    }
+});
+
 
 // Add a new Item
 router.post('/add', async (req, res) => {

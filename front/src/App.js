@@ -5,8 +5,9 @@ import AboutUS from './Components/Pages/AboutComp/About';
 import Contact from './Components/Pages/ContactComp/Contact';
 import ScrollToTop from './Components/Pages/UniversalComp/ScrollToTop';
 import Privacy from './Components/Pages/PrivacyComp/Privacy';
-import ProductList from './Components/Pages/ProductComp/ProductList';
+import ProductPage from './Components/Pages/ProductComp/ProductsPage';
 import AdminPage from './Components/Pages/AdminComp/AdminPage';
+import SingleProduct from './Components/Pages/ProductComp/SingleProduct';
 function App() {
   return (
     <Router>
@@ -16,8 +17,10 @@ function App() {
         <Route path="/about" element={<AboutUS />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/privacy" element={<Privacy />} />
-        <Route path="/products" element={<ProductList />} />
+        <Route path="/products" element={<ProductPage />} />
         <Route path="/admin" element={<AdminPage />} />
+        <Route path="/products/:productId" element={<SingleProduct />} />
+        
         
       </Routes>
     </Router>
