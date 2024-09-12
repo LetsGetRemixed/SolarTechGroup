@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from './AuthContext'; // Import the AuthContext
+import Navbar from '../UniversalComp/Navbar';
+import Footer from '../UniversalComp/Footer';
 
 const Login = () => {
     const [username, setUsername] = useState('');
@@ -37,7 +39,9 @@ const Login = () => {
     };
 
     return (
-        <div className="min-h-screen flex justify-center items-center bg-gray-100">
+        <div>
+            <Navbar />
+        <div className="min-h-screen flex justify-center items-center bg-gray-900">
             <div className="bg-white p-8 rounded shadow-lg max-w-md w-full">
                 <h2 className="text-2xl font-bold mb-6 text-center">Admin Login</h2>
 
@@ -70,12 +74,14 @@ const Login = () => {
 
                     <button
                         type="submit"
-                        className="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"
+                        className="w-full bg-primary hover:bg-highlight text-white font-bold py-2 px-4 rounded"
                     >
                         Login
                     </button>
                 </form>
             </div>
+        </div>
+        <Footer />
         </div>
     );
 };
