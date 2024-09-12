@@ -22,7 +22,7 @@ const Navbar = () => {
     }, [menuOpen]);
 
     return (
-        <nav className="bg-dark py-4 md:py-6">
+        <nav className="bg-dark py-4 md:py-6 border-b-2 border-primary">
             <div className="container mx-auto flex items-center px-6 justify-between">
                 {/* Logo */}
              <Link to="/" className="flex items-center">

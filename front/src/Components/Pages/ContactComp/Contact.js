@@ -77,7 +77,7 @@ const Contact = () => {
                 </div>
 
                 {/* Contact Form */}
-                <div className="lg:w-1/2 w-full bg-white p-6 shadow-lg rounded-lg">
+                <div className="lg:w-1/2 w-full bg-white p-6 shadow-lg rounded-lg border-2 mx-2">
                     <h2 className="text-2xl font-semibold mb-6">Get in Touch</h2>
                     <form>
                         <div className="grid grid-cols-1 gap-6 md:grid-cols-2">

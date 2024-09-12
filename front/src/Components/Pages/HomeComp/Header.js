@@ -35,7 +35,7 @@ const Header = () => {
 
   return (
     <header
-      className="h-[90vh] bg-cover bg-center bg-no-repeat transition-all duration-500"
+      className="h-[90vh] bg-cover bg-center bg-no-repeat transition-all duration-500 border-b-2 border-primary"
       style={{ backgroundImage: images[currentImage] }}
     >
       <div className="flex items-center justify-center h-full bg-black bg-opacity-50 px-4">
@@ -44,11 +44,11 @@ const Header = () => {
           <h1 className="flex flex-col items-center text-center animate-fade-in">
             {/* Southern in Orange */}
             <span className="font-montserrat text-3xl md:text-5xl font-bold text-orange-500">
-              {typedText.startsWith("Southern") ? typedText.slice(0, 8) : "Southern"}
+              {typedText.startsWith("S") ? typedText.slice(0, 8) : "Southern"}
             </span>
             {/* Technologist Group in White */}
             <span className="text-mainwhite font-montserrat text-3xl md:text-5xl font-bold mt-2">
-              {typedText.length > 8 ? typedText.slice(8) : "Technologist Group"}
+              {typedText.length > 8 ? typedText.slice(8) : ""}
             </span>
           </h1>
 

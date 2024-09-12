@@ -10,7 +10,7 @@ const AboutUs = () => {
                     <img 
                         src="/images/TESTLED-2.jpg" 
                         alt="About Our Company" 
-                        className="w-full h-auto rounded-lg shadow-lg"
+                        className="w-full h-auto rounded-lg shadow-lg border-2 border-primary"
                     />
                 </div>
 

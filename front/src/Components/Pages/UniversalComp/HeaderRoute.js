@@ -8,7 +8,7 @@ const HeaderRoute = ({ imageUrl, title, productName }) => {
     const breadcrumbs = location.pathname.split('/').filter((path) => path);
 
     return (
-        <header className="relative bg-transparent mb-0">
+        <header className="relative bg-transparent mb-0 border-b-2 border-primary">
             {/* Header Image */}
             <div className="relative w-full h-40 bg-cover bg-center" style={{ backgroundImage: `url(${imageUrl})` }}>
                 <div className="absolute inset-0 bg-black opacity-30 z-10"></div> {/* Optional overlay */}

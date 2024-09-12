@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
-        <footer className="bg-dark py-8 text-white">
+        <footer className="bg-dark py-8 text-white border-t-2 border-primary">
             <div className="container mx-auto flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
                 
                 {/* Logo and Company Name */}
