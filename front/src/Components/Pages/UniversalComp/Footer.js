@@ -30,7 +30,7 @@ const Footer = () => {
 
                 {/* Admin Dashboard Link */}
                 <div className="flex justify-center md:justify-end">
-                    <Link to="/admin" className="text-sm hover:text-gray-400 transition duration-300">
+                    <Link to="/login" className="text-sm hover:text-gray-400 transition duration-300">
                         Admin Dashboard
                     </Link>
                 </div>
