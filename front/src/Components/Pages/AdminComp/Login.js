@@ -13,10 +13,9 @@ const Login = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-
         try {
             // Send login request to backend
-            const response = await fetch('http://localhost:2424/login', {
+            const response = await fetch('http://localhost:2424/admin/login', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -27,8 +26,7 @@ const Login = () => {
             const data = await response.json();
 
             if (response.ok) {
-                localStorage.setItem('token', data.token);
-                login(); // Set authentication state to true
+                login(data.token); // Set authentication state to true
                 navigate('/admin'); // Redirect to admin page
             } else {
                 setError(data.message || 'Invalid login credentials');
