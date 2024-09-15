@@ -26,15 +26,31 @@ router.get('/:id', async (req, res) => {
 });
 
 
-// Add a new Item
+// Add a new item to the inventory
 router.post('/add', async (req, res) => {
-    const { itemName, quantity, price, description } = req.body;
+    const { itemName, category, quantity, price, dimensions, features, image, description } = req.body;
+    
     try {
-        const newItem = new Inventory({ itemName, quantity, price, description });
+        // Create a new inventory item with the provided data
+        const newItem = new Inventory({
+            itemName,
+            category,
+            quantity,
+            price,
+            dimensions,
+            features,    // Corrected typo from 'fetures' to 'features'
+            image,       // Optional field
+            description  // Optional field
+        });
+
+        // Save the new item to the database
         await newItem.save();
+
+        // Send a success response
         res.status(201).send('Item added successfully');
     } catch (error) {
-        res.status(400).send('Error adding Item: ' + error.message);
+        // Handle any errors that occurred during the process
+        res.status(400).send('Error adding item: ' + error.message);
     }
 });
 
