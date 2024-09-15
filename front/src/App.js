@@ -22,7 +22,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/products" element={<ProductPage />} />
-        <Route exact path="/login" element={<Login />} />
+        <Route exact path="/wvmdsm3202351md0svjcvao93jm2m50vmd02" element={<Login />} />
         <Route path="/admin" element={<PrivateRoute element={AdminPage} />} />
         <Route path="/products/:productId" element={<SingleProduct />} />
         
