@@ -7,7 +7,7 @@ import AboutUsBlock from '../HomeComp/AboutUsBlock'
 import ProductBlock from '../HomeComp/ProductBlock'
 const Home = () => {
   return (
-    <div>
+    <div className='font-sans'>
       <Navbar />
       <Header />
       <ProductBlock />
