@@ -6,16 +6,24 @@ import useProducts from './useProducts';
 const ProductInventory = () => {
     const { products, loading, error } = useProducts(); // Get products and status
     const [sortedProducts, setSortedProducts] = useState([]);
-    const [sortOption, setSortOption] = useState('name'); // Default sort by name
+    const [sortOption, setSortOption] = useState(''); // Default sort by name
+    const [categories, setCategories] = useState([]);
+
+    // Sort products whenever the sort option changes
+    useEffect(() => {
+        const uniqueCategories = [...new Set(products.map(product => product.category))];
+        setCategories(uniqueCategories);
+
+        // When products are first loaded, set sortedProducts to all products (All Categories)
+        setSortedProducts(products);
+    }, [products]);
 
     // Sort products whenever the sort option changes
     useEffect(() => {
         if (products.length > 0) {
             let sorted = [...products];
-            if (sortOption === 'name') {
-                sorted.sort((a, b) => a.itemName.localeCompare(b.itemName));
-            } else if (sortOption === 'price') {
-                sorted.sort((a, b) => a.price - b.price);
+            if (sortOption) {
+                sorted = sorted.filter(product => product.category === sortOption);
             }
             setSortedProducts(sorted);
         }
@@ -30,20 +38,24 @@ const ProductInventory = () => {
     if (error) return <p>Error loading products.</p>;
 
     return (
-        <div className="container mx-auto px-4 py-8">
+        <div className="container mx-auto px-4 py-8 font-sans">
             <h1 className="text-3xl font-bold mb-6 text-center">Product Inventory</h1>
 
             {/* Sorting Dropdown */}
             <div className="mb-6">
-                <label htmlFor="sort" className="mr-4 text-lg font-medium">Sort By:</label>
+                <label htmlFor="sort" className="mr-4 text-lg font-medium">Sort By Category:</label>
                 <select
                     id="sort"
                     value={sortOption}
                     onChange={handleSortChange}
                     className="p-2 border border-gray-300 rounded"
                 >
-                    <option value="name">Name</option>
-                    <option value="price">Price</option>
+                    <option value="">All Categories</option>
+                    {categories.map((category, index) => (
+                        <option key={index} value={category}>
+                            {category}
+                        </option>
+                    ))}
                 </select>
             </div>
 
