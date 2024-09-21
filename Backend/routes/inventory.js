@@ -4,10 +4,18 @@ const Inventory = require('../models/inventory');
 
 // Get all inventory
 router.get('/', async (req, res) => {
+    const { category } = req.query; // Destructure the category from the query parameters
     try {
-        const items = await Inventory.find();
+        let items;
+        if (category) {
+            // If a category is provided, filter the items by category
+            items = await Inventory.find({ category: category });
+        } else {
+            // If no category is provided, return all items
+            items = await Inventory.find();
+        }
         res.status(200).json(items);
-    } catch(error) {
+    } catch (error) {
         res.status(500).send('Error fetching inventory: ' + error.message);
     }
 });

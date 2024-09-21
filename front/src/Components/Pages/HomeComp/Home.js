@@ -4,12 +4,13 @@ import Header from '../HomeComp/Header'
 import Navbar from '../UniversalComp/Navbar'
 import Footer from '../UniversalComp/Footer'
 import AboutUsBlock from '../HomeComp/AboutUsBlock'
+import ProductBlock from '../HomeComp/ProductBlock'
 const Home = () => {
   return (
     <div>
       <Navbar />
       <Header />
-      Products and about
+      <ProductBlock />
       <AboutUsBlock />
       <Footer />
 
