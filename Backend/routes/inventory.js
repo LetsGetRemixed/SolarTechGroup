@@ -31,16 +31,15 @@ router.post('/add', async (req, res) => {
     const { itemName, category, quantity, price, dimensions, features, image, description } = req.body;
     
     try {
-        // Create a new inventory item with the provided data
         const newItem = new Inventory({
             itemName,
             category,
             quantity,
             price,
             dimensions,
-            features,    // Corrected typo from 'fetures' to 'features'
-            image,       // Optional field
-            description  // Optional field
+            features,    
+            image,       
+            description  
         });
 
         // Save the new item to the database
@@ -51,6 +50,25 @@ router.post('/add', async (req, res) => {
     } catch (error) {
         // Handle any errors that occurred during the process
         res.status(400).send('Error adding item: ' + error.message);
+    }
+});
+
+// Update quantity of an item
+router.put('/updateQuantity', async (req, res) => {
+    const { itemName, addedQuantity } = req.body;
+    console.log(req.body);
+    try {
+        const updatedItem = await Inventory.findOneAndUpdate(
+            { itemName },
+            { $inc: { quantity: addedQuantity } }, // $inc operator increments the quantity
+            { new: true } // Return updated item
+        );
+        if (!updatedItem) {
+            return res.status(404).send('Item not found');
+        }
+        res.status(200).json({ message: 'Quantity updated successfully', updatedItem });
+    } catch (error) {
+        res.status(400).send('Error updating quantity: ' + error.message);
     }
 });
 
