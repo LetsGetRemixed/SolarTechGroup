@@ -44,7 +44,7 @@ const ProductBlock = () => {
                     <Link to={`/products/${product._id}`} key={product._id}>
                         <div className="border p-4 rounded-lg shadow-lg hover:shadow-2xl transition duration-300">
                             <img
-                                src={product.imageUrl || '/images/default-product.png'}
+                                src={product.image || '/images/default-product.png'}
                                 alt={product.itemName}
                                 className="w-full h-48 object-cover rounded mb-4"
                             />
