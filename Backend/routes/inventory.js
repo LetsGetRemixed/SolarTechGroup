@@ -80,4 +80,49 @@ router.put('/updateQuantity', async (req, res) => {
     }
 });
 
+// Update an inventory item
+router.put('/updateItem', async (req, res) => {
+    const { itemId, itemName, category, quantity, price, dimensions, features, image, description } = req.body;
+    let updateFields = {};
+    if (itemName) updateFields.itemName = itemName;
+    if (category) updateFields.category = category;
+    if (quantity) updateFields.quantity = quantity;
+    if (price) updateFields.price = price;
+    if (dimensions) updateFields.dimensions = dimensions;
+    if (features) updateFields.features = features;
+    if (image) updateFields.image = image;
+    if (description) updateFields.description = description;
+
+    try {
+        // Only update the fields that are provided in the request
+        const updatedItem = await Inventory.findByIdAndUpdate(
+            itemId,
+            { $set: updateFields }, // Use $set to update only the specified fields
+            { new: true, runValidators: true }
+        );
+
+        if (!updatedItem) {
+            return res.status(404).send('Item not found');
+        }
+
+        res.status(200).json({ message: 'Item updated successfully', updatedItem });
+    } catch (error) {
+        res.status(400).send('Error updating item: ' + error.message);
+    }
+});
+
+// Delete an item
+router.delete('/deleteItem/:id', async (req, res) => {
+    try {
+        const { id } = req.params;
+        const itemToDelete = await Inventory.findByIdAndDelete(id);
+        if (!itemToDelete) {
+            return res.status(404).send('Item not found');
+        }
+        res.status(200).json({ message: 'Item deleted successfully', itemToDelete });
+    } catch (error) {
+        res.status(400).send('Error deleting item ' + error.message);
+    }
+});
+
 module.exports = router;
