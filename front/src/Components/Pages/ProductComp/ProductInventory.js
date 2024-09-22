@@ -64,7 +64,7 @@ const ProductInventory = () => {
             {sortedProducts.map((product) => (
                 <Link to={`/products/${product._id}`} key={product._id}>
                     <div className="border p-4 rounded shadow-lg hover:shadow-2xl transition duration-300">
-                        <img src={product.imageUrl} alt={product.itemName} className="w-full h-48 object-cover rounded mb-4" />
+                    <img src={product.image} alt={product.itemName} className="w-full h-48 object-cover rounded mb-4" />
                         <h2 className="text-xl font-semibold">{product.itemName}</h2>
                         <p className="text-gray-700 mt-2">{product.description}</p>
                         <p className="text-lg font-bold mt-4">${product.price.toFixed(2)}</p>
