@@ -73,7 +73,11 @@ const SingleProduct = () => {
                         {/* Product Details */}
                         <div className="p-6">
                             <h1 className="text-4xl font-bold mb-4 text-gray-800">{product.itemName}</h1>
-                            <p className="text-lg font-semibold text-blue-600 mb-4">Price: ${product.price ? product.price.toFixed(2) : 'N/A'}</p>
+                            <p className="text-lg font-semibold text-blue-600 mb-4">
+                                Price: {product.price != null && typeof product.price === 'number'
+                                ? `$${product.price.toFixed(2)}`
+                                : 'Contact us for details'}
+                            </p>
                             <p className="text-md text-gray-600 mb-4"><strong>Category:</strong> {product.category || 'N/A'}</p>
                             <p className="text-md text-gray-600 mb-4"><strong>Available Stock:</strong> {product.quantity || 'N/A'}</p>
                             <p className="text-md text-gray-600 mb-4"><strong>Dimensions:</strong> {product.dimensions || 'N/A'}</p>

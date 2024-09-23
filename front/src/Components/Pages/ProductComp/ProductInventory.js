@@ -67,7 +67,11 @@ const ProductInventory = () => {
                     <img src={product.image} alt={product.itemName} className="w-full h-48 object-cover rounded mb-4" />
                         <h2 className="text-xl font-semibold">{product.itemName}</h2>
                         <p className="text-gray-700 mt-2">{product.description}</p>
-                        <p className="text-lg font-bold mt-4">${product.price.toFixed(2)}</p>
+                        <p className="text-lg font-bold mt-4">
+  {product.price != null && typeof product.price === 'number'
+    ? `$${product.price.toFixed(2)}`
+    : "Contact us for details"}
+</p>
                     </div>
                 </Link>
 ))}
