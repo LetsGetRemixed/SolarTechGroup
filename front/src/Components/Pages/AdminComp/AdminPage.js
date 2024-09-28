@@ -293,7 +293,11 @@ const AdminPage = () => {
                             <p className="text-lg font-semibold">{item.itemName}</p>
                             <p className="text-sm text-gray-400">Category: {item.category}</p>
                             <p className="text-sm text-gray-400">Quantity: {item.quantity}</p>
-                            <p className="text-sm text-gray-400">Price: ${item.price.toFixed(2)}</p>
+                            <p className="text-lg font-semibold text-blue-600 mb-4">
+                                Price: {item.price != null && typeof item.price === 'number'
+                                ? `$${item.price.toFixed(2)}`
+                                : 'Contact us for details'}
+                            </p>
                             <p className="text-sm text-gray-400">Dimensions: {item.dimensions}</p>
                             <p className="text-sm text-gray-400">Description: {item.description}</p>
                             <div className="mt-4 flex space-x-2">
