@@ -6,7 +6,9 @@ const inventoryRoutes = require('./routes/inventory');
 const purchaseRoutes = require('./routes/purchases');
 const adminRoutes = require('./routes/admin');
 const loginRoute = require('./routes/login');
+const checkoutRoutes = require('./routes/checkout');
 const dotenv = require('dotenv');
+
 
 dotenv.config();
 
@@ -22,6 +24,7 @@ app.use('/inventory', inventoryRoutes);
 app.use('/purchases', purchaseRoutes);
 app.use('/admin', adminRoutes.router);
 app.use('/login', loginRoute);
+app.use('/checkout', checkoutRoutes);
 
 
 // Connect to MongoDB
