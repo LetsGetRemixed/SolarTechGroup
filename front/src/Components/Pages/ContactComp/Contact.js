@@ -49,6 +49,7 @@ const Contact = () => {
                     <div className="mb-8">
                         <h3 className="font-semibold mb-4">Find Us</h3>
                         <iframe
+                            title="Contact Form"
                             className="w-full h-48 rounded-lg"
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.835434509184!2d144.95373531531745!3d-37.8172099797517!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf57760b8f7494ad6!2s1234%20Main%20St%2C%20Melbourne%20VIC%203001%2C%20Australia!5e0!3m2!1sen!2sau!4v1613973968774!5m2!1sen!2sau"
                             allowFullScreen=""
