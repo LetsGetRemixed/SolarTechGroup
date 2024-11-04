@@ -5,10 +5,12 @@ const useProducts = () => {
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(true);
 
+    const backendURL = process.env.REACT_APP_BACKEND_URL;
+
     // Fetch all products
     const fetchProducts = async () => {
         try {
-            const response = await fetch('http://localhost:2424/inventory');
+            const response = await fetch(`${backendURL}/inventory`);
             const data = await response.json();
             setProducts(data);
             setLoading(false);
@@ -22,7 +24,7 @@ const useProducts = () => {
     // Fetch a product by ID
     const fetchProductById = async (id) => {
         try {
-            const response = await fetch(`http://localhost:2424/inventory/${id}`);
+            const response = await fetch(`${backendURL}/inventory/${id}`);
             
             // Check if the response is not HTML (error page)
             const contentType = response.headers.get("content-type");
@@ -45,7 +47,7 @@ const useProducts = () => {
      // Fetch products by category
      const fetchProductsByCategory = async (category) => {
         try {
-            const response = await fetch(`http://localhost:2424/inventory?category=${encodeURIComponent(category)}`);
+            const response = await fetch(`${backendURL}/inventory?category=${encodeURIComponent(category)}`);
             
             // Check if the response is not HTML (error page)
             const contentType = response.headers.get("content-type");

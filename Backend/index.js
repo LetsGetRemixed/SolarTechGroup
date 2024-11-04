@@ -39,7 +39,6 @@ connectToDB();
 
 
 
-admin.initializeApp();
 
 // Export the app as a Firebase HTTPS function
 exports.api = functions.https.onRequest(app);
