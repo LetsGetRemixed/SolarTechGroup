@@ -10,7 +10,7 @@ const Header = () => {
   const [currentImage, setCurrentImage] = useState(0);
   const [typedText, setTypedText] = useState('');
   const [index, setIndex] = useState(0);
-  const [isTyping, setIsTyping] = useState(true);
+  //const [isTyping, setIsTyping] = useState(true);
 
   const fullText = 'Southern Technologist Group';
 
