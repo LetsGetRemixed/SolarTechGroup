@@ -10,12 +10,13 @@ const Login = () => {
     const [error, setError] = useState('');
     const navigate = useNavigate();
     const { login } = useAuth(); // Access login function from AuthContext
+    const backendURL = process.env.REACT_APP_BACKEND_URL;
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
             // Send login request to backend
-            const response = await fetch('http://localhost:2424/admin/login', {
+            const response = await fetch(`${backendURL}/admin/login`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

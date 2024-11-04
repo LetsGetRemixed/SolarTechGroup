@@ -10,20 +10,22 @@ const Header = () => {
   const [currentImage, setCurrentImage] = useState(0);
   const [typedText, setTypedText] = useState('');
   const [index, setIndex] = useState(0);
+  
+  
   //const [isTyping, setIsTyping] = useState(true);
 
   const fullText = 'Southern Technologist Group';
 
   // Typewriter effect
   useEffect(() => {
-    if (isTyping && index < fullText.length) {
+    if (index < fullText.length) {
       const typingTimeout = setTimeout(() => {
         setTypedText((prev) => prev + fullText[index]);
         setIndex((prevIndex) => prevIndex + 1);
       }, 150); // Delay between each letter typing
       return () => clearTimeout(typingTimeout);
     }
-  }, [index, isTyping, fullText]);
+  }, [index, fullText]);
 
   // Background image change every 3 seconds
   useEffect(() => {

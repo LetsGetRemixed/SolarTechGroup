@@ -23,7 +23,7 @@ const useProducts = () => {
         };
 
         fetchProducts(); // Initial fetch of all products
-    }, []);  
+    }, [backendURL]);  
 
     // Fetch a product by ID
     const fetchProductById = async (id) => {
