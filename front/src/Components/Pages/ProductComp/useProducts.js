@@ -71,7 +71,7 @@ const useProducts = () => {
     // Fetch products on component mount
     useEffect(() => {
         fetchProducts(); // Initial fetch of all products
-    }, []);
+    }, [fetchProducts]);
 
 
 

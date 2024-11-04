@@ -32,7 +32,7 @@ export const AuthProvider = ({ children }) => {
         } else {
             setIsAuthenticated(false);
         }
-    })
+    }, []);
 
     return (
         <AuthContext.Provider value={{ isAuthenticated, login, logout }}>
