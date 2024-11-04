@@ -17,8 +17,11 @@ const admin = require('firebase-admin');
 
 dotenv.config();
 
+// Initialize Firebase Admin SDK
+admin.initializeApp();
+
 const app = express();
-const port = process.env.PORT || 2424;
+
 
 app.use(cors()); // Enable cors for routes
 app.use(express.json()); // Parse JSON bodies for incoming request
@@ -34,13 +37,9 @@ app.use('/login', loginRoute);
 // Connect to MongoDB
 connectToDB();
 
-// Start server
-app.listen(2424, () => {
-    console.log('Server is running');
-});
+
 
 admin.initializeApp();
 
-exports.helloWorld = functions.https.onRequest((req, res) => {
-  res.send("Hello from Firebase!");
-});
+// Export the app as a Firebase HTTPS function
+exports.api = functions.https.onRequest(app);
