@@ -7,15 +7,26 @@ permissions:
   checks: write
   contents: read
   pull-requests: write
+
 jobs:
   build_and_preview:
     if: ${{ github.event.pull_request.head.repo.full_name == github.repository }}
     runs-on: ubuntu-latest
     steps:
+      # Checkout the repository
       - uses: actions/checkout@v4
-      - run: npm ci && npm run build
+
+      # Install dependencies and build the project
+      - name: Install and Build
+        run: |
+          npm ci
+          npm run build
+
+      # Deploy to Firebase Preview Channel for PR
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
-          repoToken: ${{ secrets.GITHUB_TOKEN }}
-          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_SOUTHERNTECHNOLOGISTGROUP }}
-          projectId: southerntechnologistgroup
+          repoToken: "${{ secrets.GITHUB_TOKEN }}"
+          firebaseServiceAccount: "${{ secrets.FIREBASE_SECRET_TOKEN }}"
+          projectId: "southerntechnologistgroup"
+          channelId: "preview"  # Use a preview channel for PRs
+

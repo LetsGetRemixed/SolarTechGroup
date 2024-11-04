@@ -28,11 +28,8 @@ jobs:
 
       # Deploy both Hosting (frontend) and Functions (backend)
       - name: Deploy to Firebase Hosting and Functions
-        uses: FirebaseExtended/action-hosting-deploy@v0
-        with:
-          repoToken: "${{ secrets.GITHUB_TOKEN }}"
-          firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_SOUTHERNTECHNOLOGISTGROUP }}"
-          channelId: live
-          projectId: southerntechnologistgroup
-        env:
-          FIREBASE_CLI_PREVIEWS: hostingfunctions
+        working-directory: .  # Set to root where firebase.json is located
+        run: firebase deploy --only hosting,functions --token "${{ secrets.FIREBASE_SECRET_TOKEN }}"
+
+        
+
