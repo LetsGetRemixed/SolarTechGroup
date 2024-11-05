@@ -16,7 +16,7 @@ const Login = () => {
         e.preventDefault();
         try {
             // Send login request to backend
-            const response = await fetch(`${backendURL}/api/admin/login`, {
+            const response = await fetch(`${backendURL}/admin/login`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

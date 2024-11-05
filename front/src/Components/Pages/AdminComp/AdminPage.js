@@ -26,7 +26,7 @@ const AdminPage = () => {
 
     const fetchInventory = async () => {
         try {
-            const response = await fetch(`${backendURL}/api/inventory`);
+            const response = await fetch(`${backendURL}/inventory`);
             const data = await response.json();
             setInventory(data);
         } catch (error) {
@@ -50,7 +50,7 @@ const AdminPage = () => {
 
     const fetchUsers = async () => {
         try {
-            const response = await fetch(`${backendURL}/api/users`);
+            const response = await fetch(`${backendURL}/users`);
             const data = await response.json();
             setUsers(data);
         } catch (error) {
@@ -84,7 +84,7 @@ const AdminPage = () => {
         const itemToUpdate = inventory.find((item) => item._id === itemId);
     
         try {
-            const response = await fetch(`${backendURL}/api/inventory/updateItem`, {
+            const response = await fetch(`${backendURL}/inventory/updateItem`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
@@ -127,7 +127,7 @@ const AdminPage = () => {
     const handleAddItem = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch(`${backendURL}/api/inventory/add`, {
+            const response = await fetch(`${backendURL}/inventory/add`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -158,7 +158,7 @@ const AdminPage = () => {
 
     const handleUpdateItem = async (itemId) => {
         try {
-            const response = await fetch(`${backendURL}/api/inventory/updateItem`, {
+            const response = await fetch(`${backendURL}/inventory/updateItem`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
@@ -179,7 +179,7 @@ const AdminPage = () => {
 
     const handleDeleteItem = async (itemId) => {
         try {
-            const response = await fetch(`${backendURL}/api/inventory/deleteItem/${itemId}`, {
+            const response = await fetch(`${backendURL}/inventory/deleteItem/${itemId}`, {
                 method: 'DELETE',
             });
 
