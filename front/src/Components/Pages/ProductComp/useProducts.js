@@ -56,13 +56,17 @@ const useProducts = () => {
         try {
             const response = await fetch(`${backendURL}/inventory?category=${encodeURIComponent(category)}`);
             const contentType = response.headers.get("content-type");
-            if (!response.ok) {
-                const errorText = await response.text(); // Get the error response as text
-                throw new Error(`HTTP error! Status: ${response.status} - ${errorText}`);
-            }
+            
+            // Log response if it’s not JSON
             if (!contentType || !contentType.includes("application/json")) {
-                throw new Error("Invalid response format, not JSON");
+                const errorText = await response.text(); // Get response text
+                throw new Error(`Invalid response format, not JSON: ${errorText}`);
             }
+    
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            
             return await response.json();
         } catch (error) {
             console.error(`Error fetching products for category: ${category}`, error);
