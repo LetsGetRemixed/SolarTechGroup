@@ -18,11 +18,13 @@ const AdminPage = () => {
         description: ''
     });
 
+    const backendURL = process.env.REACT_APP_BACKEND_URL;
+
     const [editItem, setEditItem] = useState(null); // State to hold the item being edited
 
     const fetchInventory = async () => {
         try {
-            const response = await fetch('http://localhost:2424/inventory');
+            const response = await fetch(`${backendURL}/api/inventory`);
             const data = await response.json();
             setInventory(data);
         } catch (error) {
@@ -46,7 +48,7 @@ const AdminPage = () => {
 
     const fetchUsers = async () => {
         try {
-            const response = await fetch('http://localhost:2424/users');
+            const response = await fetch(`${backendURL}/api/users`);
             const data = await response.json();
             setUsers(data);
         } catch (error) {
@@ -80,7 +82,7 @@ const AdminPage = () => {
         const itemToUpdate = inventory.find((item) => item._id === itemId);
     
         try {
-            const response = await fetch('http://localhost:2424/inventory/updateItem', {
+            const response = await fetch(`${backendURL}/api/inventory/updateItem`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
@@ -123,7 +125,7 @@ const AdminPage = () => {
     const handleAddItem = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch('http://localhost:2424/inventory/add', {
+            const response = await fetch(`${backendURL}/api/inventory/add`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -154,7 +156,7 @@ const AdminPage = () => {
 
     const handleUpdateItem = async (itemId) => {
         try {
-            const response = await fetch('http://localhost:2424/inventory/updateItem', {
+            const response = await fetch(`${backendURL}/api/inventory/updateItem`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
@@ -175,7 +177,7 @@ const AdminPage = () => {
 
     const handleDeleteItem = async (itemId) => {
         try {
-            const response = await fetch(`http://localhost:2424/inventory/deleteItem/${itemId}`, {
+            const response = await fetch(`${backendURL}/api/inventory/deleteItem/${itemId}`, {
                 method: 'DELETE',
             });
 

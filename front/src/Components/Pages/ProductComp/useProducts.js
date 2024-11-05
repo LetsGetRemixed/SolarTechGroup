@@ -11,7 +11,7 @@ const useProducts = () => {
     useEffect(() => {
         const fetchProducts = async () => {
             try {
-                const response = await fetch(`${backendURL}/inventory`);
+                const response = await fetch(`${backendURL}/api/inventory`);
                 if (!response.ok) {
                     throw new Error(`HTTP error! Status: ${response.status}`);
                 }
@@ -35,7 +35,7 @@ const useProducts = () => {
     // Fetch a product by ID
     const fetchProductById = async (id) => {
         try {
-            const response = await fetch(`${backendURL}/inventory/${id}`);
+            const response = await fetch(`${backendURL}/api/inventory/${id}`);
             const contentType = response.headers.get("content-type");
             if (!contentType || !contentType.includes("application/json")) {
                 throw new Error("Invalid response format, not JSON");
@@ -54,7 +54,7 @@ const useProducts = () => {
     // Fetch products by category
     const fetchProductsByCategory = async (category) => {
         try {
-            const response = await fetch(`${backendURL}/inventory?category=${encodeURIComponent(category)}`);
+            const response = await fetch(`${backendURL}/api/inventory?category=${encodeURIComponent(category)}`);
             const contentType = response.headers.get("content-type");
             
             // Log response if it’s not JSON
