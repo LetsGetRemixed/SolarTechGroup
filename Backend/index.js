@@ -6,15 +6,11 @@ const inventoryRoutes = require('./routes/inventory');
 const purchaseRoutes = require('./routes/purchases');
 const adminRoutes = require('./routes/admin');
 const loginRoute = require('./routes/login');
+const checkoutRoutes = require('./routes/checkout');
 const dotenv = require('dotenv');
 
 const {onRequest} = require("firebase-functions/v2/https");
 const logger = require("firebase-functions/logger");
-
-const functions = require('firebase-functions');
-const admin = require('firebase-admin');
-
-
 dotenv.config();
 
 // Initialize Firebase Admin SDK
@@ -32,6 +28,7 @@ app.use('/inventory', inventoryRoutes);
 app.use('/purchases', purchaseRoutes);
 app.use('/admin', adminRoutes.router);
 app.use('/login', loginRoute);
+app.use('/checkout', checkoutRoutes);
 
 
 // Connect to MongoDB
