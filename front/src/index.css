@@ -7,7 +7,7 @@
 
 @font-face {
   font-family: 'SpaceRanger';
-  src: url('../public/fonts/SpaceRanger.otf') format('opentype');
+  src: url('../public/fonts/SpaceRanger.ttf') format('opentype');
   font-weight: normal;
   font-style: normal;
 }
