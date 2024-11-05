@@ -45,11 +45,11 @@ const Header = () => {
         <div className="bg-white bg-opacity-20 p-8 rounded-lg shadow-lg border border-orange-500 hover:shadow-2xl transition-all duration-500">
           <h1 className="flex flex-col items-center text-center animate-fade-in">
             {/* Southern in Orange */}
-            <span className="font-montserrat text-3xl md:text-5xl font-bold text-orange-500">
+            <span className="font-Poppins text-3xl md:text-5xl font-bold text-orange-500">
               {typedText.startsWith("S") ? typedText.slice(0, 8) : "Southern"}
             </span>
             {/* Technologist Group in White */}
-            <span className="text-mainwhite font-montserrat text-3xl md:text-5xl font-bold mt-2">
+            <span className="text-mainwhite font-Poppins text-3xl md:text-5xl font-bold mt-2">
               {typedText.length > 8 ? typedText.slice(8) : ""}
             </span>
           </h1>

@@ -8,6 +8,7 @@
 			animation: {
 			  'fade-in': 'fadeIn 1s ease-out forwards',
 			  'gradient-xy': 'gradient-xy 5s ease infinite',
+			  'scan-line': 'scan 2s ease-in-out infinite',
 			},
 			keyframes: {
 			  fadeIn: {
@@ -22,10 +23,15 @@
 				  'background-position': '100% 50%',
 				},
 			  },
+			  scan: {
+				'0%, 100%': { opacity: 0.3 },
+				'50%': { opacity: 1 },
+			  },
 			},
 			fontFamily: {
-			  sans: ['Roboto', 'sans-serif'],
-			  montserrat: ['Montserrat', 'sans-serif'],
+			  Roboto: ['Roboto', 'sans-serif'],
+			  Poppins: ['Poppins', 'sans-serif'],
+			  title: ['SpaceRanger', 'sans-serif'],
 			},
 			colors: {
 			  primary: {

@@ -30,11 +30,20 @@ const ProductBlock = () => {
     }, [fetchProductsByCategory]); // Ensure this runs when the hook function changes
 
     return (
-        <div className="container mx-auto px-4 py-8">
-            <h2 className="text-5xl font-extrabold mb-8 text-center bg-clip-text text-transparent animate-gradient-xy bg-gradient-to-r from-red-500 via-orange-500 to-yellow-500">
-                Hot Products
-                <span className="absolute top-0 left-1/2 transform -translate-x-1/2 mt-1 text-3xl animate-pulse">🔥</span>
-            </h2>
+        <div className="container mx-auto px-4 py-24 font-Roboto">
+           <div className="flex items-center py-8 justify-center">
+                {/* Left Line */}
+                <span className="w-20 h-[2px] bg-gradient-to-r from-transparent via-orange-500 to-yellow-500 animate-scan-line mr-4"></span>
+
+                {/* Title */}
+                <h2 className="text-5xl font-medium mb-8 text-center bg-clip-text text-transparent animate-gradient-xy bg-gradient-to-r from-orange-500 via-orange-500 to-red-500 drop-shadow-[0_0px_1px_rgba(0,0,0,1)]">
+                    HOT PRODUCTS
+                </h2>
+
+                {/* Right Line */}
+                <span className="w-20 h-[2px] bg-gradient-to-r from-transparent via-orange-500 to-yellow-500 animate-scan-line mr-4"></span>
+                </div>
+
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {products.map((product) => (

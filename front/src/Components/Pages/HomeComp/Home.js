@@ -25,7 +25,7 @@ const Home = () => {
   };
 
   return (
-    <div className='font-sans'>
+    <div className='font-Roboto'>
       <Navbar />
       <Header />
       <motion.div
