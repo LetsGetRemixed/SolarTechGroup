@@ -3,6 +3,8 @@ import React, { useState, useEffect } from 'react';
 import Navbar from '../UniversalComp/Navbar';
 import Footer from '../UniversalComp/Footer';
 
+const backendURL = process.env.REACT_APP_BACKEND_URL;
+
 const AdminPage = () => {
     const [users, setUsers] = useState([]);
     const [inventory, setInventory] = useState([]);// State to hold inventory items
@@ -18,7 +20,7 @@ const AdminPage = () => {
         description: ''
     });
 
-    const backendURL = process.env.REACT_APP_BACKEND_URL;
+    
 
     const [editItem, setEditItem] = useState(null); // State to hold the item being edited
 
