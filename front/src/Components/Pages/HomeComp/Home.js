@@ -25,7 +25,7 @@ const Home = () => {
   };
 
   return (
-    <div className='font-Roboto'>
+    <div className='font-Roboto overflow-x-hidden'>
       <Navbar />
       <Header />
       <motion.div

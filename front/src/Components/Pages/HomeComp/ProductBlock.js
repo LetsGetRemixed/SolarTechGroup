@@ -44,7 +44,7 @@ const ProductBlock = () => {
             <span className="w-16 h-[2px] bg-gradient-to-r from-transparent via-orange-500 to-yellow-500 animate-pulse mr-4"></span>
       
             {/* Title with Glow Effect and Shadow */}
-            <h2 className="text-5xl font-title mb-8 text-center bg-clip-text text-transparent bg-gradient-to-r from-orange-500 via-red-500 to-yellow-500 drop-shadow-lg shadow-black shadow-md">
+            <h2 className="text-5xl font-Poppins font-bold mb-8 text-center bg-clip-text text-transparent bg-gradient-to-r from-orange-500 via-red-500 to-yellow-500 drop-shadow-lg shadow-black shadow-md">
               HOT PRODUCTS
             </h2>
       

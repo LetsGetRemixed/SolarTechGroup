@@ -45,7 +45,7 @@ const Header = () => {
         <div className="bg-white bg-opacity-20 p-8 rounded-lg shadow-lg border border-orange-500 hover:shadow-2xl transition-all duration-500">
           <h1 className="flex flex-col items-center text-center animate-fade-in">
             {/* Southern in Orange */}
-            <span className="font-Poppins text-3xl md:text-5xl font-bold text-orange-500">
+            <span className="font-Poppins text-3xl md:text-6xl text-orange-500">
               {typedText.startsWith("S") ? typedText.slice(0, 8) : "Southern"}
             </span>
             {/* Technologist Group in White */}
@@ -57,7 +57,7 @@ const Header = () => {
           {/* Centered Moto */}
           {typedText === fullText && (
             <div className="mt-6 flex flex-col items-center animate-fade-in">
-              <span className="text-xl md:text-2xl font-semibold text-white text-center">Moving Forward</span>
+              <span className="text-xl md:text-2xl  text-white text-center">Moving Forward</span>
 
             </div>
           )}
