@@ -12,6 +12,13 @@ const useProducts = () => {
         const fetchProducts = async () => {
             try {
                 const response = await fetch(`${backendURL}/inventory`);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+                const contentType = response.headers.get("content-type");
+                if (!contentType || !contentType.includes("application/json")) {
+                    throw new Error("Invalid response format, not JSON");
+                }
                 const data = await response.json();
                 setProducts(data);
                 setLoading(false);
