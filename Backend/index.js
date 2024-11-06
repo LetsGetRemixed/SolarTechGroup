@@ -13,8 +13,11 @@ const {onRequest} = require("firebase-functions/v2/https");
 const logger = require("firebase-functions/logger");
 dotenv.config();
 
-// Initialize Firebase Admin SDK
 const admin = require('firebase-admin');
+
+const functions = require('firebase-functions');
+
+// Initialize Firebase Admin SDK
 admin.initializeApp();
 
 const app = express();
