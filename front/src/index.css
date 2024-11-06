@@ -5,12 +5,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Poppins:wght@400;500;700&family=Roboto+Mono:wght@400;500&display=swap');
 
 
-@font-face {
-  font-family: 'SpaceRanger';
-  src: url('../public/fonts/SpaceRanger.ttf') format('opentype');
-  font-weight: normal;
-  font-style: normal;
-}
 
 body {
   margin: 0;

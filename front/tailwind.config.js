@@ -31,7 +31,6 @@
 			fontFamily: {
 			  Roboto: ['Roboto', 'sans-serif'],
 			  Poppins: ['Poppins', 'sans-serif'],
-			  title: ['SpaceRanger', 'sans-serif'],
 			},
 			colors: {
 			  primary: {
