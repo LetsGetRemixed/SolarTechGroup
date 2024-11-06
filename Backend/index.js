@@ -14,6 +14,7 @@ const logger = require("firebase-functions/logger");
 dotenv.config();
 
 // Initialize Firebase Admin SDK
+const admin = require('firebase-admin');
 admin.initializeApp();
 
 const app = express();
