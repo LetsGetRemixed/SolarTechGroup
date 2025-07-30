@@ -39,7 +39,7 @@ jobs:
       # Deploy both Hosting (frontend) and Functions (backend)
       - name: Deploy to Firebase Hosting and Functions
         working-directory: .  # Set to root where firebase.json is located
-        run: firebase deploy --only hosting,functions --token "${{ secrets.FIREBASE_SECRET_TOKEN }}"
+        run: firebase deploy --only hosting,functions --force --token "${{ secrets.FIREBASE_SECRET_TOKEN }}"
 
 
 
