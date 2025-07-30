@@ -22,8 +22,8 @@ const Contact = () => {
           <div className="space-y-6 font-exo text-lg text-gray-700">
             <div>
               <h3 className="font-semibold text-gray-800">📧 Email</h3>
-              <a href="mailto:info@stgcorp.com" className="text-blue-600 hover:underline">
-                Bradley.williams@southerntechnologistgroup.com
+              <a href="mailto:Contact@southerntechnologistgroup.com" className="text-blue-600 hover:underline">
+                Contact@southerntechnologistgroup.com
               </a>
             </div>
             <div>
