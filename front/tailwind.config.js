@@ -26,6 +26,9 @@
 			fontFamily: {
 			  sans: ['Roboto', 'sans-serif'],
 			  montserrat: ['Montserrat', 'sans-serif'],
+			  orbitron: ['Orbitron', 'sans-serif'],
+       		 rajdhani: ['Rajdhani', 'sans-serif'],
+        	exo: ['"Exo 2"', 'sans-serif'],
 			},
 			colors: {
 			  primary: {

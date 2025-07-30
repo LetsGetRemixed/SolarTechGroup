@@ -1,77 +1,34 @@
 
-import React, { useEffect, useRef, useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Navbar = () => {
-    const [menuOpen, setMenuOpen] = useState(false);
-    const navToggleRef = useRef(null);
-    const navMenuRef = useRef(null);
+  return (
+    <nav className="bg-black text-white shadow-md">
+      <div className="max-w-7xl mx-auto px-4 py-3 font-rajdhani flex items-center justify-between">
+        {/* Logo */}
+        <Link to="/" className="flex items-center space-x-3">
+          <img
+            src="/images/logo1.png"
+            alt="STG Logo"
+            className="h-12 w-auto"
+          />
+          <span className="text-xl font-bold font-rajdhani tracking-wide">Southern Technologist Group</span>
+        </Link>
 
-    const handleMenuToggle = () => {
-        setMenuOpen(!menuOpen);
-    };
+        {/* Nav Links */}
+        <div className="space-x-6 hidden md:flex">
+          <Link to="/about" className="hover:text-blue-400 transition-colors">About Us</Link>
+          <Link to="/contact" className="hover:text-blue-400 transition-colors">Contact</Link>
+        </div>
 
-    useEffect(() => {
-        const navMenu = navMenuRef.current;
-
-        if (menuOpen) {
-            navMenu.classList.remove('hidden');
-        } else {
-            navMenu.classList.add('hidden');
-        }
-    }, [menuOpen]);
-
-    return (
-        <nav className="bg-dark py-4 md:py-6 border-b-2 border-primary">
-            <div className="container mx-auto flex items-center px-6 justify-between">
-                {/* Logo */}
-             <Link to="/" className="flex items-center">
-                 <img 
-                     src="/STGLogo.png" 
-                     alt="Southern Technologist Group" 
-                      className="w-10 h-10 md:w-10 md:h-10" 
-                 />
-                     {/* Hide the name on smaller screens, show it on medium screens and up */}
-                     <span className="text-2xl font-bold text-white ml-4 hidden md:block">Southern Technologist Group</span>
-            </Link>
-
-                {/* Desktop Links */}
-                <div className="hidden md:flex md:items-center space-x-6">
-                    <Link className="text-white hover:text-highlight transition duration-300" to="/products">Products</Link>
-                    <Link className="text-white hover:text-highlight transition duration-300" to="/contact">Contact</Link>
-                    <Link className="text-white hover:text-highlight transition duration-300" to="/about">About Us</Link>
-                    
-                </div>
-
-                {/* Mobile Menu Button */}
-                <button
-                    className="md:hidden flex flex-col justify-center w-8 h-8"
-                    onClick={handleMenuToggle}
-                    ref={navToggleRef}
-                >
-                    <span className={`block w-full h-1 bg-white  mb-1 transition-all duration-300 ${menuOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
-                    <span className={`block w-full h-1 bg-white mb-1 transition-all duration-300 ${menuOpen ? 'opacity-0' : ''}`}></span>
-                    <span className={`block w-full h-1 bg-white transition-all duration-300 ${menuOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
-                </button>
-            </div>
-
-            {/* Mobile Menu */}
-            <div
-                className={`${
-                    menuOpen ? 'block' : 'hidden'
-                } md:hidden bg-[#212529] py-4`}
-                ref={navMenuRef}
-            >
-                <ul className="flex flex-col items-center space-y-4">
-                    <li><Link className="text-white hover:text-highlight transition duration-300" to="/products">Products</Link></li>
-                    <li><Link className="text-white hover:text-highlight transition duration-300" to="/contact">Contact</Link></li>
-                    <li><Link className="text-white hover:text-highlight transition duration-300" to="/about">About Us</Link></li>
-
-                </ul>
-            </div>
-        </nav>
-    );
+        {/* Mobile Menu Placeholder (optional for later enhancement) */}
+        {/* You can implement a hamburger menu here if needed */}
+      </div>
+    </nav>
+  );
 };
 
 export default Navbar;
+
 

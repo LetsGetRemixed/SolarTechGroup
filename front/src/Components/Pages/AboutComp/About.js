@@ -1,136 +1,174 @@
-//Make a component for an about page
-
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 import Navbar from '../UniversalComp/Navbar';
 import Footer from '../UniversalComp/Footer';
 import HeaderRoute from '../UniversalComp/HeaderRoute';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const About = () => {
-    return (
-        <div>
-            <Navbar />
-            <HeaderRoute imageUrl="/images/headerbanner.png" title="About Us" /> 
-        <section className="bg-gray-100 py-12">
-            {/* Hero Section */}
-            <div className="container mx-auto text-center mb-12">
-                <h1 className="text-4xl font-bold text-gray-800 mb-4">About Our Company</h1>
-                <p className="text-gray-600 text-lg">
-                    At the forefront of LED technology, we are dedicated to bringing energy-efficient lighting solutions that 
-                    inspire and illuminate. Learn more about our mission, values, and how we’re shaping the future of lighting.
-                </p>
-            </div>
 
-           {/* Company Story Section */}
-                <div className="container mx-auto flex flex-col md:flex-row items-center mb-12">
-                    {/* Left Side - Image */}
-                    <div className="md:w-1/2 mb-8 md:mb-0">
-                        <img 
-                            src="/images/TESTourteam.png" 
-                            alt="Our Story" 
-                            className="w-full h-auto rounded-lg shadow-lg"
-                        />
-                    </div>
-                    {/* Right Side - Story Text */}
-                    <div className="md:w-1/2 md:pl-8 text-center md:text-left">
-                        <h2 className="text-3xl font-bold text-gray-800 mb-4">Our Story</h2>
-                        <p className="text-gray-600">
-                            Founded with a vision to revolutionize the lighting industry, our company has grown from a small start-up
-                            to a market leader in LED innovation. From humble beginnings, we've expanded our product range and reach, 
-                            continually improving our technology to meet the demands of tomorrow. Our commitment to sustainability 
-                            and energy efficiency drives us to create lighting solutions that not only save energy but also inspire creativity 
-                            in homes and businesses across the world.
-                        </p>
-                    </div>
-                </div>
+    useEffect(() => {
+  AOS.init({
+    duration: 1000,
+    once: false,
+    offset: 300, // default is 120px; adjust to trigger earlier/later
+  });
+}, []);
 
-                {/* Vision and Mission Section */}
-                <div className="container mx-auto flex flex-col md:flex-row items-center mb-12">
-                    {/* Left Side - Mission Text */}
-                    <div className="md:w-1/2 md:pr-8 order-last md:order-first text-center md:text-left">
-                        <h2 className="text-3xl font-bold text-gray-800 mb-4">Our Mission and Vision</h2>
-                        <p className="text-gray-600">
-                            Our mission is to lead the global lighting industry with cutting-edge LED technology that saves energy, 
-                            enhances environments, and creates possibilities for the future. We believe that lighting should be both 
-                            practical and beautiful, helping to reduce carbon footprints while providing superior performance.
-                            Our vision is a world where LED lighting solutions are not just the better option, but the only option.
-                            We strive to make LED lighting accessible to everyone, from residential customers to large-scale commercial enterprises.
-                        </p>
-                    </div>
-                    {/* Right Side - Image */}
-                    <div className="md:w-1/2 mb-8 md:mb-0">
-                        <img 
-                            src="/images/TESTourmission.jpg" 
-                            alt="Our Mission" 
-                            className="w-full h-auto rounded-lg shadow-lg"
-                        />
-                    </div>
-                </div>
 
-            {/* Team and Values Section */}
-            <div className="container mx-auto mb-12">
-                <h2 className="text-3xl font-bold text-gray-800 text-center mb-8">Meet Our Team</h2>
-                <p className="text-gray-600 text-center max-w-3xl mx-auto mb-8">
-                    At the heart of our company is a passionate team of innovators, designers, and engineers dedicated to making 
-                    a difference. Our diverse and talented team shares a common goal: to push the boundaries of LED technology 
-                    and deliver lighting solutions that are second to none.
-                </p>
-                <div className="flex flex-wrap justify-center">
-                    <div className="w-full sm:w-1/2 md:w-1/4 p-4">
-                        <img 
-                            src="/images/TESTmember2.jpg" 
-                            alt="Team Member 1" 
-                            className="w-full h-auto rounded-lg shadow-lg mb-4"
-                        />
-                        <h3 className="text-xl font-semibold text-gray-800 text-center">John Doe</h3>
-                        <p className="text-gray-600 text-center">CEO & Founder</p>
-                    </div>
-                    <div className="w-full sm:w-1/2 md:w-1/4 p-4">
-                        <img 
-                            src="/images/TESTmember1.jpg" 
-                            alt="Team Member 2" 
-                            className="w-full h-auto rounded-lg shadow-lg mb-4"
-                        />
-                        <h3 className="text-xl font-semibold text-gray-800 text-center">Jane Smith</h3>
-                        <p className="text-gray-600 text-center">Lead Engineer</p>
-                    </div>
-                    <div className="w-full sm:w-1/2 md:w-1/4 p-4">
-                        <img 
-                            src="/images/TESTmember3.jpg" 
-                            alt="Team Member 3" 
-                            className="w-full h-auto rounded-lg shadow-lg mb-4"
-                        />
-                        <h3 className="text-xl font-semibold text-gray-800 text-center">Sarah Lee</h3>
-                        <p className="text-gray-600 text-center">Chief Designer</p>
-                    </div>
-                    <div className="w-full sm:w-1/2 md:w-1/4 p-4">
-                        <img 
-                            src="/images/TESTmember4.jpg" 
-                            alt="Team Member 4" 
-                            className="w-full h-auto rounded-lg shadow-lg mb-4"
-                        />
-                        <h3 className="text-xl font-semibold text-gray-800 text-center">Tom Brown</h3>
-                        <p className="text-gray-600 text-center">Marketing Head</p>
-                    </div>
-                </div>
-            </div>
+  return (
+    <div>
+      <Navbar />
+      <HeaderRoute imageUrl="/images/factory9.jpg" title="About Us" />
 
-            {/* Call to Action Section */}
-            <div className="container mx-auto text-center">
-                <h2 className="text-3xl font-bold text-gray-800 mb-6">Ready to Learn More?</h2>
-                <p className="text-gray-600 max-w-2xl mx-auto mb-8">
-                    Our story is still being written, and we invite you to be part of it. Discover how our products and services can 
-                    transform your space with high-quality LED solutions that are sustainable, reliable, and beautifully crafted.
-                </p>
-                <Link to="/contact" className="inline-block bg-primary text-white font-semibold py-3 px-8 rounded hover:bg-highlight transition duration-300">
-                    Contact Us
-                </Link>
-            </div>
-        </section>
-        <Footer/>
+      <section className="bg-gray-100 py-16 px-6">
+        {/* Introduction */}
+        <div className="max-w-5xl mx-auto text-center mb-16" data-aos="fade-up">
+          <h1 className="text-4xl font-bold font-rajdhani text-gray-800 mb-4">Southern Technologist Group (STG)</h1>
+          <p className="text-gray-600 font-exo text-lg">
+            Founded in 2022, STG delivers comprehensive solutions and structured project execution across the construction,
+            engineering, and infrastructure industries. What began with a focus on electrical and LED installations has evolved into
+            a robust offering of general contracting, electrical commissioning, HVAC analysis, civil consulting, and ready-mix
+            quality inspections.
+          </p>
         </div>
-    );
+
+        {/* Company Growth + Image */}
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-10 mb-20" data-aos="fade-up">
+          <div className="md:w-1/2">
+            <img
+              src="/images/factory8.jpg"
+              alt="Our Story"
+              className="w-full h-auto rounded-lg shadow-xl"
+            />
+          </div>
+          <div className="md:w-1/2 text-center md:text-left">
+            <h2 className="text-3xl font-bold text-gray-800 font-rajdhani mb-4">Our Evolution</h2>
+            <p className="text-gray-600 font-exo text-lg">
+              Over the years, STG has expanded its services to include general contracting, HVAC system analysis, and civil consulting.
+              Our ability to blend technical expertise with disciplined project management ensures that every project is delivered on time,
+              within scope, and to the highest safety and quality standards.
+            </p>
+          </div>
+        </div>
+
+        {/* Mission and Clients */}
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-10 mb-20" data-aos="fade-up">
+          <div className="md:w-1/2 text-center md:text-left order-last md:order-first">
+            <h2 className="text-3xl font-bold text-gray-800 font-rajdhani mb-4">Our Mission</h2>
+            <p className="text-gray-600 font-exo text-lg">
+              Our leadership team brings over 60 years of combined experience and has managed projects totaling over $72 million
+              for clients such as Amazon, Walmart, and Waste Management. Our mission is to deliver excellence through innovation,
+              precision, and a commitment to value-driven solutions that last.
+            </p>
+          </div>
+          <div className="md:w-1/2">
+            <img
+              src="/images/factory10.jpg"
+              alt="Mission"
+              className="w-full h-auto rounded-lg shadow-xl"
+            />
+          </div>
+        </div>
+
+        {/* Highlighted Projects */}
+<div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-5 mb-20" data-aos="zoom-in">
+  {/* Left - Project List */}
+  <div className="md:w-1/2">
+    <h2 className="text-3xl font-bold text-gray-800 font-rajdhani text-center md:text-left mb-6">Highlighted Projects</h2>
+    <ul className="text-gray-700 font-exo text-lg space-y-6 list-disc list-inside">
+      <li><strong>Sam Adams Brewery – Cincinnati Facility Upgrade:</strong> $6M</li>
+      <li><strong>Target Warehouse – New Facility:</strong> $10M</li>
+      <li><strong>Amazon Europe – Czech Facility Testing:</strong> $5M</li>
+      <li><strong>Ensign Energy – Rig Renovation & Upgrade:</strong> $13.5M</li>
+      <li><strong>Waste Management – National Geosynthetics Inspection:</strong> $3.2M</li>
+      <li><strong>Amazon – Colorado Springs – Electrical Scope:</strong> $128M</li>
+      <li><strong>Amazon – San Bernardino – Electrical Scope:</strong> $26M</li>
+      <li><strong>COGNEX – O’Hare International Airport – Scanner Systems:</strong> $54M</li>
+    </ul>
+  </div>
+
+  {/* Right - Image */}
+  <div className="md:w-1/2">
+    <img
+      src="/images/about2.jpg"  // Replace with your actual image
+      alt="Project Showcase"
+      className="w-full h-auto rounded-lg shadow-xl"
+    />
+  </div>
+</div>
+
+
+        {/* Feature Images */}
+        <div className="max-w-6xl mx-auto mb-20" data-aos="fade-up">
+          <h2 className="text-3xl font-bold text-gray-800 text-center font-rajdhani mb-4">What We Do</h2>
+          <p className="text-gray-600 text-center max-w-4xl mx-auto font-exo mb-8 text-lg">
+            STG's capabilities range from high-precision installations to scalable construction solutions.
+            Whether it's powering a massive warehouse or inspecting materials for public infrastructure, we bring the same level
+            of care, engineering precision, and client satisfaction to every job.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            <img src="/images/factory7.jpg" alt="Work 1" className="w-full h-auto rounded-lg shadow-md" />
+            <img src="/images/about1.jpg" alt="Work 2" className="w-full h-auto rounded-lg shadow-md" />
+            <img src="/images/factory9.jpg" alt="Work 3" className="w-full h-auto rounded-lg shadow-md" />
+          </div>
+        </div>
+
+
+         {/* CTA */}
+        <div className="max-w-4xl mx-auto text-center mb-20" data-aos="fade-up">
+          <h2 className="text-3xl font-bold text-gray-800 font-rajdhani mb-6">Ready to Learn More?</h2>
+          <p className="text-gray-600 max-w-2xl mx-auto font-exo mb-8">
+            Our story is still being written. Discover how STG can help power your next project
+            with smart, sustainable, and expertly executed solutions.
+          </p>
+          <Link
+            to="/contact"
+            className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg transition duration-300"
+          >
+            Contact Us
+          </Link>
+        </div>
+
+
+        {/* Leadership Bio */}
+        <div className="max-w-5xl mx-auto mb-20" data-aos="fade-up">
+          <h2 className="text-3xl font-bold text-gray-800 font-rajdhani text-center mb-6">Leadership</h2>
+          <div className="text-gray-600 font-exo text-lg leading-relaxed">
+            <p className="mb-4"><strong>Bradley Williams – Co-Owner</strong></p>
+            <p>
+              Bradley Williams brings a powerful blend of leadership, technical skill, and operational oversight to STG.
+              A Marine Corps veteran (2005–2009), Bradley served during Operation Iraqi Freedom and Operation Enduring Freedom.
+              After his service, he rapidly rose in the private sector—starting as an Instrumentation Technician and progressing into
+              senior roles with National Oilwell Varco, where he contributed to offshore innovation and drilling efficiency.
+            </p>
+            <p className="mt-4">
+              Bradley later led major warehouse construction projects with Honeywell Intelligrated, including multi-million-dollar Amazon facilities.
+              His experience in advanced systems integration, data automation, and project execution now drives STG’s ability to
+              consistently deliver high-value outcomes—on time and on budget.
+            </p>
+          </div>
+        </div>
+
+        {/* Avetta Registered Partner */}
+        <div className="max-w-4xl mx-auto text-center mb-20" data-aos="zoom-in" data-aos-delay="300">
+          <h2 className="text-3xl font-bold text-gray-800 font-rajdhani mb-4">Registered Partner</h2>
+          <p className="text-gray-600 text-lg font-exo mb-6">
+            Southern Technologist Group is a proud registered partner with Avetta, reinforcing our
+            commitment to compliance, safety, and operational integrity across all markets we serve.
+          </p>
+          <img src="/images/avetta.webp" alt="Avetta Logo" className="mx-auto h-20 md:h-48" />
+        </div>
+
+       
+      </section>
+
+      <Footer />
+    </div>
+  );
 };
 
 export default About;
+

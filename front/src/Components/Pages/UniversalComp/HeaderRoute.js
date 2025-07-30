@@ -8,7 +8,7 @@ const HeaderRoute = ({ imageUrl, title, productName }) => {
     const breadcrumbs = location.pathname.split('/').filter((path) => path);
 
     return (
-        <header className="relative bg-transparent mb-0 border-b-2 border-primary">
+        <header className="relative bg-transparent mb-0 border-b-2 border-gray-300">
             {/* Header Image */}
             <div className="relative w-full h-40 bg-cover bg-center" style={{ backgroundImage: `url(${imageUrl})` }}>
                 <div className="absolute inset-0 bg-black opacity-30 z-10"></div> {/* Optional overlay */}
@@ -17,7 +17,7 @@ const HeaderRoute = ({ imageUrl, title, productName }) => {
                 <div className="absolute bottom-0 left-0 w-full z-20">
                     <div className="container mx-auto py-0 w-full max-w-none">
                         <div className="text-md text-gray-200 bg-black bg-opacity-50 text-center px-4 sm:py-4 py-2 rounded-md">
-                            <Link to="/" className="text-highlight hover:underline">Home</Link>
+                            <Link to="/" className="text-blue-400 hover:underline">Home</Link>
                             {breadcrumbs.length > 0 && breadcrumbs.map((crumb, index) => {
                                 const pathTo = `/${breadcrumbs.slice(0, index + 1).join('/')}`;
 
@@ -28,7 +28,7 @@ const HeaderRoute = ({ imageUrl, title, productName }) => {
                                 return (
                                     <span key={index}>
                                         {' / '}
-                                        <Link to={pathTo} className="text-highlight hover:underline capitalize">
+                                        <Link to={pathTo} className="text-blue-400 hover:underline capitalize">
                                             {displayText} {/* Show product name instead of ID */}
                                         </Link>
                                     </span>
