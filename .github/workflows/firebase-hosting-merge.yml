@@ -30,6 +30,10 @@ jobs:
       # Install dependencies for backend (functions)
       - name: Install Backend Dependencies
         working-directory: ./Backend
+        env:
+          MOGNODB_URI: ${{ secrets.MONGODB_URI }}
+          JWT_SECRET: ${{ secrets.JWT_SECRET }}
+          
         run: npm ci
 
       # Deploy both Hosting (frontend) and Functions (backend)
