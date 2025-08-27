@@ -12,7 +12,7 @@ import AdminPage from './Components/Pages/AdminComp/AdminPage';
 import SingleProduct from './Components/Pages/ProductComp/SingleProduct';
 import Login from './Components/Pages/AdminComp/Login';
 
-import { analytics } from '../firebase';
+import { analytics } from './firebase';
 import { logEvent } from 'firebase/analytics';
 
 // Component to track page views
