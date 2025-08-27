@@ -1,5 +1,5 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { AuthProvider } from './Components/Pages/AdminComp/AuthContext';
 import PrivateRoute from './Components/Pages/AdminComp/PrivateRoute';
 import Home from './Components/Pages/HomeComp/Home';
@@ -11,10 +11,38 @@ import ProductPage from './Components/Pages/ProductComp/ProductsPage';
 import AdminPage from './Components/Pages/AdminComp/AdminPage';
 import SingleProduct from './Components/Pages/ProductComp/SingleProduct';
 import Login from './Components/Pages/AdminComp/Login';
+
+import { analytics } from '../firebase';
+import { logEvent } from 'firebase/analytics';
+
+// Component to track page views
+function AnalyticsTracker() {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (analytics) {
+      // Log page view event
+      logEvent(analytics, 'page_view', {
+        page_title: document.title,
+        page_location: window.location.href,
+        page_path: location.pathname
+      });
+      
+      // Optional: Log custom event for better tracking
+      logEvent(analytics, 'screen_view', {
+        screen_name: location.pathname
+      });
+    }
+  }, [location]);
+
+  return null; // This component doesn't render anything
+}
+
 function App() {
   return (
     <AuthProvider>
     <Router>
+      <AnalyticsTracker />
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
